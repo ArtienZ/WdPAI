@@ -1,4 +1,4 @@
 <?php
 
-echo "hello world it's WORK";
+echo "Tutaj powstaje projekt mojej aplikacji internetowej";
 ?>
