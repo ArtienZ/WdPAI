@@ -1,0 +1,319 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+body{
+    margin: 0;
+    --def: #F9B569; 	
+	--inv: #fff;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #F9B467 0%, #FBCA7A 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container{
+    width: 50%;
+    height: 35%;
+}
+
+form.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 12px 16px #00000029;
+    border-radius: 131px;
+    opacity: 0.9;
+    height: 40vh;
+    width: 80%;
+    margin-left: 10%;
+}
+
+button{
+    background: #FFA600 0% 0% no-repeat padding-box;
+    border: none;
+    box-shadow: 0px 12px 12px #00000029;
+    border-radius: 35px;
+    margin: 1em;
+    line-height: 2.5em;
+    opacity: 1;
+    width: 60%;
+    text-align: center;
+    font: normal normal 300 2em Microsoft YaHei UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    clear: both;
+}
+
+input{
+    border: none;
+    font: normal normal normal 1em MV Boli;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 60%;
+    opacity: 0.8;
+}
+
+@media only screen and (max-device-width: 420px){
+    *{
+        font-size: 36px;
+    }
+    .login_container{
+        width: 100%;
+        transform: matrix(1, 0.05, -0.05, 1, 0, 0);
+    }
+    
+    form{
+        
+        margin: auto;       
+    }
+    input, button{
+        transform: matrix(1, -0.05, 0.05, 1, 0, 0);
+    }
+}
+.base-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+nav{
+    width: 15vw;
+    height: 100%;
+    background: transparent linear-gradient(346deg, #FCD381 0%, #F79125 100%) 0% 0% no-repeat padding-box;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+nav > img{
+    width: 70%;
+    margin: 2em auto;
+}
+
+a{
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 0.9;
+    line-height: 3.0em;
+    color: #FFFFFF;  
+}
+li i{
+    font-size: 1em;
+}
+
+.nav-button{
+    position: relative;	
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    
+}
+.nav-button:before, .nav-button:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+}
+
+.nav-button:hover {
+    color: var(--def);
+	transition-delay: .3s;
+}
+
+.nav-button:hover:before {
+	transition-delay: 0s;
+}
+
+.nav-button:hover:after {
+    background: var(--inv);
+	transition-delay: .25s;
+}
+
+nav>ul>li:last-child:hover > .nav-button{
+    color: #F79125;
+    font-weight: bold;
+    transition-delay: 0.2s;
+}
+ul{
+    list-style-type: none;
+    margin: 0 auto;
+}
+nav>ul{
+    font: normal normal normal 24px/58px Myanmar Text;
+    color: var(--inv);
+    height: 100%;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+nav>ul>li{
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+nav>ul>li:nth-last-child(-n+2)> .nav-button{
+    position: absolute;
+    bottom: 5.0em;
+    width: 100%;
+    opacity: 0.9;
+}
+nav>ul>li:last-child > .nav-button{
+    bottom: 1em;
+    width: 100%;
+    background: var(--inv);
+    
+}
+nav>ul>li:last-child > .nav-button{
+    color: var(--def);
+}
+.from-top:before, 
+.from-top:after {
+	left: 0;
+	height: 0;
+	width: 100%;
+}
+
+.from-top:before {
+	bottom: 0;	
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.from-top:after {
+	top: 0;
+	height: 0;
+}
+
+.from-top:hover:before,
+.from-top:hover:after {
+	height: 100%;
+}
+main{
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: left;
+    padding: 1em 2em;
+}
+.search-bar{
+    width: 60%;
+    
+}
+.search-bar>form>input{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 9px #00000029;
+    border: 3px solid #707070;
+    border-radius: 2em;
+    margin-left: 5em;
+    opacity: 0.71;
+    text-align: left;
+    box-sizing: border-box;
+}
+.profile{
+    margin-left: 7em;
+    width: calc(100%-7em);
+    height: 80%;
+    background: transparent linear-gradient(225deg, #FCD381 0%, #F79125 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    flex-direction:row;
+}
+.profile-data{
+    height: 100%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 40%  40%;
+    grid-template-rows: 30% 30%; 
+    column-gap: 1em;
+    row-gap:1em;
+    justify-items: left;
+    align-items: left;
+}
+#profile-photo{
+    width: 60%;
+    height: 100%;
+    margin: 1em 0 0 3em;
+    background-color: gray;
+    box-shadow: 0px 6px 9px #00000029;
+    border-radius: 38px;
+    opacity: 1;
+}
+.profile-menu{
+    margin-top: 5em;
+    height: 80%;
+    width: 35%;
+}
+.profile-menu>ul{
+    list-style-type: none;
+    font: normal normal 300 30px/40px Microsoft YaHei UI;
+    letter-spacing: 0px;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+.profile-menu>ul>li{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.profile-menu>ul>li:nth-child(n+3){
+    margin-bottom: 4em;
+}
+.profile-menu>ul>li:nth-child(n+4){
+    margin-bottom: 1em;
+}
+.profile-menu-buttons{
+    width: 100%;
+}
+.profile-menu>ul>li>a{
+    text-align: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 9px #00000029;
+    color: #F9B569;
+    border-radius: 25px;
+    opacity: 0.9;
+    line-height: 1.5em;
+}
+#photo{
+    background: transparent gray 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 9px #00000029;
+    border-radius: 38px;
+    width: 10%;
+    height: 20%;
+    opacity: 1;
+}
+.profile-data{
+    text-align: left;
+    font: normal normal normal 20px/45px MV Boli;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1; 
+}
+p{
+    margin-left: 1em;
+    border-bottom: 1px solid white;
+    font-size: 1.5em;
+}
+.profile-menu-buttons:hover{
+    box-shadow: 8px 12px 16px #00000029;
+}

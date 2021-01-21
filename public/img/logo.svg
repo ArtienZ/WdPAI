@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="661" height="325.783" viewBox="0 0 661 325.783">
+  <defs>
+    <filter id="NAZWA" x="0" y="47.783" width="661" height="278" filterUnits="userSpaceOnUse">
+      <feOffset dy="12" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#NAZWA)">
+    <text id="NAZWA-2" data-name="NAZWA" transform="translate(18 53.78)" fill="#fff" font-size="150" font-family="MVBoli, MV Boli" opacity="0.8"><tspan x="0" y="171">NAZWA</tspan></text>
+  </g>
+  <g id="Component_26_2" data-name="Component 26 – 2" transform="matrix(-1, 0, -0.016, 0.454, 448.289, -10.094)" opacity="0.7">
+    <path id="Polygon_1" data-name="Polygon 1" d="M70.854,24.965a25,25,0,0,1,39.292,0l39.013,49.575C162.066,90.94,150.383,115,129.513,115H51.487c-20.87,0-32.552-24.06-19.646-40.461Z" transform="translate(27 140)" fill="#fff"/>
+    <path id="Polygon_4" data-name="Polygon 4" d="M35.068,99.093c5.409-23.9,39.455-23.9,44.865,0l28.711,126.829A23,23,0,0,1,86.211,254H28.789A23,23,0,0,1,6.356,225.922Z" transform="translate(0 1)" fill="#fff"/>
+    <path id="Polygon_5" data-name="Polygon 5" d="M35.068,99.093c5.409-23.9,39.455-23.9,44.865,0l28.711,126.829A23,23,0,0,1,86.211,254H28.789A23,23,0,0,1,6.356,225.922Z" transform="translate(124)" fill="#fff"/>
+  </g>
+</svg>
