@@ -231,7 +231,7 @@ header{
 }
 .profile{
     margin-left: 7em;
-    width: calc(100%-7em);
+    width: calc(100%- 7em);
     height: 80%;
     background: transparent linear-gradient(225deg, #FCD381 0%, #F79125 100%) 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -247,7 +247,7 @@ header{
     column-gap: 1em;
     row-gap:1em;
     justify-items: left;
-    align-items: left;
+    align-items: flex-start;
 }
 #profile-photo{
     width: 60%;
