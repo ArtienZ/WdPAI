@@ -24,9 +24,6 @@
     font: normal normal 300 40px/52px Microsoft YaHei UI;
     color: white;
 }
-header p{
-
-}
 .search-bar{
     display: flex;
     flex-direction: column;

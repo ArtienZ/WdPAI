@@ -1,0 +1,90 @@
+.profile{
+    justify-content: center;
+    align-items: center;
+}
+.header-text{
+    font: normal normal normal 50px/86px MV Boli;
+    letter-spacing: 0px;
+    color: #F9B366;
+    margin-left: 2em;
+}
+.form-container{
+    width: 90%;
+    height: 90%;
+    margin: 0;
+    font-family: MV Boli;
+}
+form{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
+    grid-template-rows: repeat(9, 7%);
+    grid-row-gap: 1em;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: center;
+}
+.form-container > input{
+    box-shadow: 0px 3px 6px #00000029;
+    border: 2px solid #F6FBFF;
+    border-radius: 25px;
+    width: 80%;
+    font-size: 0.8em;
+}
+.form-container > label{
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+.form-container >select{
+    background: #FFFFFF;
+    font-family: MV Boli;
+    opacity: 0.8;
+    height: 100%;
+    width: 80%;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+}
+.big-label{
+    font-size: 3.5em;
+}
+.small-label{
+    font-size: 1.5em;
+}
+.file-button{
+    width: 100%;
+}
+[type="file"] {
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+[type="file"] + label {
+    background: #FFA600 0% 0% no-repeat padding-box;
+    box-shadow: 2px 12px 12px #00000029;
+    border-radius: 35px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font: normal normal 300 2em Microsoft YaHei UI;
+}
+[type="file"]:focus + label,
+[type="file"] + label:hover {
+    background-color: #f15d22;
+}
+
+[type="file"]:focus + label {
+    outline: 1px dotted #000;
+}
+.button-wrap{
+    width: 50%;
+}
+form>button:last-child{
+    grid-row-end: -1;
+}
+form>button:hover{
+    background-color: #f15d22;
+}

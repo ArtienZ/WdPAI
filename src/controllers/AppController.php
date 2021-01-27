@@ -15,16 +15,15 @@ class AppController
     }
     protected function render(string $template = null, array $variables = [])
     {
-        $template_path = 'public/views/' . $template . '.php';
+        $templatePath = 'public/views/'.$template.'.php';
         $output = 'File not found';
-        if (file_exists($template_path)) {
+        if (file_exists($templatePath)) {
             extract($variables);
+
             ob_start();
-            include $template_path;
+            include $templatePath;
             $output = ob_get_clean();
         }
         print $output;
     }
 }
-
-?>

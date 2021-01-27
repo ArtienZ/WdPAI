@@ -13,14 +13,12 @@ class DefaultController extends AppController
     {
         $this->render('myprofile');
     }
-    public function add_therapist()
-    {
-        $this->render('add_therapist',['messages'=>['terapeute','terapeuty']]);
-    }
     public function add_kid()
     {
-        $this->render('add_kid',['messages'=>['dziecko','dziecka']]);
+        $this->render('addtherapist',['messages'=>['dziecko','dziecka']]);
+    }
+    public function add_therapist()
+    {
+        $this->render('addtherapist',['messages'=>['terapeute','terapeuty']]);
     }
 }
-
-?>
