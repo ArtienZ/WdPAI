@@ -42,7 +42,7 @@
                 <input type="text" name="kid-name" placeholder="Imie">
                 <input type="text" name="kid-surname" placeholder="Nazwisko">
                 <input type="text" name="kid-age" placeholder="Wiek">
-                <select form="add-kid-f">
+                <select form="add-kid-f" name="therapist">
                     <option value="Therapist 1">Therapist 1</option>
                     <option value="Therapist 2">Therapist 2</option>
                     <option value="Therapist 3">Therapist 3</option>
@@ -64,6 +64,7 @@
                 <input type="text" name="parent-surname"placeholder="Nazwisko">
                 <input type="text" name="parent-phone" placeholder="Tel. kontaktowy">
                 <input type="text" name="parent-email" placeholder="email@email.com">
+                <input type="text" name="password" placeholder="password">
                 <button type="submit">Dodaj</button>
 
             </form>

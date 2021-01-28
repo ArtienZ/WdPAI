@@ -9,8 +9,6 @@ class User
     private $surname;
     private $phone;
     private $photo;
-
-
     public function __construct(string $email, string $password, string $name, string $surname, string $phone = null, string $photo=  null)
     {
         $this->email = $email;

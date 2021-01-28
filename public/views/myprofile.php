@@ -36,8 +36,8 @@
             </header>
             <section class="profile">
                 <div class="profile-data">
-                    <div id="profile-photo">
-
+                    <div class="profile-photo">
+                        <img src="public\uploads\kitten-small.png">
                     </div>
                     <div class="personal-data">
                         <p>Dane personalne:</p>
@@ -85,6 +85,13 @@
                 </div>
 
             </section>
+            <?php
+            if(isset($messages) || isset($kid)){
+                foreach ($messages as $message){
+                    echo $message;
+                }
+            }
+            ?>
         </main>
     </div>
 </body>

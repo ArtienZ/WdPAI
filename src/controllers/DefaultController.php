@@ -21,4 +21,7 @@ class DefaultController extends AppController
     {
         $this->render('addtherapist',['messages'=>['terapeute','terapeuty']]);
     }
+    public function kid_profile(){
+        $this->render('kidprofile');
+    }
 }
