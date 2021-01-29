@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/profile.css">
     <title>Mój Profil</title>
 </head>
 <body>
 <div class="base-container">
-    <nav>
-        <img src="/public/img/logo.svg">
-        <ul>
-            <li>
-                <a href="#" class="nav-button from-top">Dzieci</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Terapeuci</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Zadania</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Mój profil</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">WYLOGUJ</a>
-            </li>
-        </ul>
-
-    </nav>
+    <?php
+    include_once('public/shared/navigation.php');
+    ?>
     <main>
         <header>
             <div class="search-bar">
-                <form class="search-form">
                     <input placeholder="Imie i nazwisko dziecka">
-                </form>
             </div>
         </header>
         <section class="profile">
@@ -43,11 +24,13 @@
                     <p>Dane dziecka:</p>
                     <ul>
                         <li>
+                            Imie i nazwisko:<br>
                             <?=
                             $kid->getName() ." ". $kid->getSurname();
                             ?>
                         </li>
                         <li>
+                            Wiek: <br>
                             <?=
                             $kid->getAge();
                             ?>
@@ -58,16 +41,19 @@
                     <p>Dane rodzica: </p>
                     <ul>
                         <li>
+                            Imie i nazwisko:<br>
                             <?=
                             $kid->getParentName() ." ". $kid->getParentSurname();
                             ?>
                         </li>
                         <li>
+                            Tel.kontaktowy:<br>
                             <?=
                             $kid->getPhone();
                             ?>
                         </li>
                         <li>
+                            E-mail:<br>
                             <?=
                             $kid->getEmail();
                             ?>
@@ -93,13 +79,6 @@
             </div>
 
         </section>
-        <?php
-        if(isset($messages) || isset($kid)){
-            foreach ($messages as $message){
-                echo $message;
-            }
-        }
-        ?>
     </main>
 </div>
 </body>

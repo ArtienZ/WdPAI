@@ -2,14 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow: auto;
 }
 .profile > form{
     width: 50%;
     height: 20%;
+    margin-top: 5em;
+    overflow: auto;
 }
 .profile > ul{
     width: 100%;
+
+}
+.profile li{
+    width: 100%;
+    padding-left: 0;
+
 
 }
 .profile a{
@@ -19,9 +27,11 @@
     font: normal normal 300 40px/52px Microsoft YaHei UI;
     opacity: 1;
     text-align: center;
+    box-sizing: border-box;
 }
 .profile p{
     font: normal normal 300 40px/52px Microsoft YaHei UI;
+    margin-top: 0;
     color: white;
 }
 .search-bar{
@@ -29,10 +39,22 @@
     flex-direction: column;
     justify-items: flex-start;
 }
-.search-bar>form>input{
+.search-bar>input{
     margin-left: 22%;
+    border: 3px solid #707070;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 9px 12px #00000029;
     border-radius: 36px;
     opacity: 0.9;
+}
+.users-search{
+    width: 25%;
+    height: 40%;
+    align-items: center;
+    overflow: auto;
+}
+.users-search>a{
+    font-size: 2em;
+    line-height: 1.3em;
+    margin-bottom: 0.2em;
 }

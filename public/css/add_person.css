@@ -1,9 +1,10 @@
 .profile{
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 .header-text{
-    font: normal normal normal 50px/86px MV Boli;
+    font: normal normal normal 3em/1em MV Boli;
     letter-spacing: 0px;
     color: #F9B366;
     margin-left: 2em;
@@ -24,30 +25,38 @@ form{
     align-items: center;
 }
 .form-container > input{
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 1em 1em #00000029;
     border: 2px solid #F6FBFF;
+    margin-bottom: 2em;
     border-radius: 25px;
     width: 80%;
-    font-size: 0.8em;
+    font-size: 1.4vh;
 }
 .form-container > label{
     letter-spacing: 0px;
     color: #FFFFFF;
 }
+.no-valid{
+
+    background: rgba(255, 60 ,100, 0.7);
+    color: white;
+}
 .form-container >select{
     background: #FFFFFF;
     font-family: MV Boli;
     opacity: 0.8;
+    font-size: 1.5vh;
     height: 100%;
     width: 80%;
     border: 2px solid #FFFFFF;
     border-radius: 25px;
 }
 .big-label{
-    font-size: 3.5em;
+    font-size: 5vh;
+    margin-bottom: 1em;
 }
 .small-label{
-    font-size: 1.5em;
+    font-size: 2.5vh;
 }
 .file-button{
     width: 100%;
@@ -81,6 +90,9 @@ form{
 }
 .button-wrap{
     width: 50%;
+}
+.button-wrap >label{
+    font-size: 3vh;
 }
 form>button:last-child{
     grid-row-end: -1;

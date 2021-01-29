@@ -2,33 +2,16 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <link rel="stylesheet" type="text/css" href="/public/css/add_person.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/34d5627880.js" crossorigin="anonymous"></script>
     <title>Dodaj dziecko</title>
 </head>
 <body>
 
 <div class="base-container">
-    <nav>
-        <img src="/public/img/logo.svg">
-        <ul>
-            <li>
-                <a href="#" class="nav-button from-top">Dzieci</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Terapeuci</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Zadania</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">Mój profil</a>
-            </li>
-            <li>
-                <a href="#" class="nav-button from-top">WYLOGUJ</a>
-            </li>
-        </ul>
-
-    </nav>
+    <?php
+    include_once('public/shared/navigation.php');
+    ?>
     <main>
         <header>
             <div class="header-text">
@@ -36,7 +19,7 @@
             </div>
         </header>
         <section class="profile">
-            <form class="form-container" id="add-kid-f" action="addKid" method="POST" ENCTYPE="multipart/form-data">
+            <form class="form-container" id="add-kid-f" action="addKid" method="POST" ENCTYPE="multipart/form-data" autocomplete="off">
 
                 <label class="big-label">Dane dziecka:</label>
                 <input type="text" name="kid-name" placeholder="Imie">
@@ -62,9 +45,9 @@
                 <label class="big-label">Dane rodzica:</label>
                 <input type="text" name="parent-name" placeholder="Imie">
                 <input type="text" name="parent-surname"placeholder="Nazwisko">
-                <input type="text" name="parent-phone" placeholder="Tel. kontaktowy">
-                <input type="text" name="parent-email" placeholder="email@email.com">
-                <input type="text" name="password" placeholder="password">
+                <input type="text" name="phone" placeholder="Tel. kontaktowy">
+                <input type="text" name="email" placeholder="email@email.com">
+                <input type="password" name="password" placeholder="password">
                 <button type="submit">Dodaj</button>
 
             </form>

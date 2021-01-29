@@ -4,24 +4,17 @@ require_once 'AppController.php';
 
 class DefaultController extends AppController
 {
+
     public function index()
     {
         $this->render('login');
     }
-
     public function myprofile()
     {
         $this->render('myprofile');
     }
-    public function add_kid()
+    public function add_Ther()
     {
-        $this->render('addtherapist',['messages'=>['dziecko','dziecka']]);
-    }
-    public function add_therapist()
-    {
-        $this->render('addtherapist',['messages'=>['terapeute','terapeuty']]);
-    }
-    public function kid_profile(){
-        $this->render('kidprofile');
+        $this->render('add_therapist_form');
     }
 }

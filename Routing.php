@@ -2,7 +2,8 @@
 
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
-require_once 'src/controllers/AddKidController.php';
+require_once 'src/controllers/KidController.php';
+require_once 'src/controllers/TherapistController.php';
 
 class Routing
 {
@@ -21,8 +22,8 @@ class Routing
 
     public static function run($url)
     {
-        $action = explode("/", $url)[0];
 
+        $action = explode("/", $url)[0];
         if (!array_key_exists($action, self::$routes)) {
             die("Wrong URL");
         }

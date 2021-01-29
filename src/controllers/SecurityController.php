@@ -2,6 +2,8 @@
 
 require_once 'AppController.php';
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__.'/../models/Kid.php';
+require_once __DIR__.'/../models/Therapist.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
@@ -25,7 +27,9 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong email or password']]);
         }
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/myprofile"); // OR U CAN USE THIS -> return $this->render('myprofile');
+        if($user instanceof Kid)return  $this->render('kidprofile',['kid'=>$user]);
+        if($user instanceof Therapist)return $this->render('myprofile',['therapist'=>$user]);
+        //header("Location: {$url}/kid_profile"); // OR U CAN USE THIS -> return $this->render('myprofile');
 
     }
 }

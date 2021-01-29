@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/profile.css">
     <title>Mój Profil</title>
 </head>
 <body>
     <div class="base-container">
-        <nav>
-            <img src="/public/img/logo.svg">
-            <ul>
-                <li>
-                    <a href="#" class="nav-button from-top">Dzieci</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-button from-top">Terapeuci</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-button from-top">Zadania</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-button from-top">Mój profil</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-button from-top">WYLOGUJ</a>
-                </li>
-            </ul>
-            
-        </nav>
+        <?php
+        include_once('public/shared/navigation.php');
+        ?>
         <main>
             <header>
                 <div class="search-bar">
-                    <form class="search-form">
-                        <input placeholder="Imie i nazwisko terapeuty">
-                    </form>
+                    <input placeholder="Imie i nazwisko terapeuty">
                 </div>
             </header>
             <section class="profile">
@@ -43,21 +24,29 @@
                         <p>Dane personalne:</p>
                         <ul>
                             <li>
-                                Imie i nazwisko
+                                Imie i nazwisko:<br>
+                                <?=$therapist->getName()." ".$therapist->getSurname() ?>
                             </li>
                             <li>
-                               tel. kontaktowy
+                                Tel.kontaktowy:<br>
+                                <?=$therapist->getPhone()?>
                             </li>
                             <li>
-                                e-mail
+                                E-mail:<br>
+                                <?=$therapist->getEmail()?>
+                            </li>
+                            <li>
+                                Specjalizacja:<br>
+                                <?=$therapist->getSpecialization()?>
                             </li>
                         </ul>
                     </div>
                     <div id="payment-details">
                         <p>Dane rozliczeniowe: </p>
                         <ul>
-                            <li> Paypal/Na konto</li>
-                            <li> Numer konta </li>
+                            <li>Numer konta:<br>
+                                <?=$therapist->getAccountNumber()?></li>
+                            <li>Stawka godzinowa<br> <?=$therapist->getHourlyRate()?></li>
                         </ul>
                     </div>
                 </div>
