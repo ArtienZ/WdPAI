@@ -10,10 +10,16 @@ if(isset($messages))
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <link rel="stylesheet" type="text/css" href="/public/css/style_add_someone.css">
     <?php if($users[0] instanceof Kid){
+        $add='addKid';
+        $action='kid_profile';
         echo '<script type="text/javascript" src="./public/js/searchKid.js" defer></script>';
-    }if($users[0] instanceof Therapist){
+    }elseif($users[0] instanceof Therapist){
+        $add='addTherapist';
+        $action='therapist_profile';
         echo '<script type="text/javascript" src="./public/js/searchTherapist.js" defer></script>';
-    };
+    }else{
+        $add='nopermission';
+    }
     ?>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>Dodaj <?php echo $text[1]?></title>
@@ -31,7 +37,7 @@ if(isset($messages))
                 <form>
                     <ul>
                         <li>
-                            <a href="#">Dodaj <?php echo $text[0]?></a>
+                            <a href="/<?=$add?>">Dodaj <?php echo $text[0]?></a>
                         </li>
                     </ul>
 
@@ -41,9 +47,14 @@ if(isset($messages))
                     <input placeholder="Imie i nazwisko">
                 </div>
                 <div class="users-search">
+
                     <?php foreach ($users as $user):?>
-                    <a href="#"><?= $user->getName() ." ". $user->getSurname() ?></a>
+                    <form method="POST" action="<?=$action?>">
+                    <input type="hidden" name="userEmail" value="<?=$user->getEmail()?>"/>
+                    <button type="submit"><?= $user->getName() ." ". $user->getSurname() ?></button>
+                    </form>
                     <?php endforeach;?>
+
                 </div>
             </section>
         </main>

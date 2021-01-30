@@ -53,8 +53,16 @@
     align-items: center;
     overflow: auto;
 }
-.users-search>a{
+.users-search>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.users-search>form>button{
     font-size: 2em;
     line-height: 1.3em;
+    width: 90%;
     margin-bottom: 0.2em;
 }

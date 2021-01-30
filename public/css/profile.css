@@ -2,3 +2,13 @@ li{
     line-height:1.3em;
     margin-bottom: 1em;
 }
+.no-perm{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font: normal normal normal 8vh/10vh MV Boli;
+}

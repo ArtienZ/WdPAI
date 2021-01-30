@@ -1,11 +1,18 @@
 <?php
 
 require_once 'Repository.php';
+require_once 'UserRepository.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../models/Therapist.php';
 
 class TherapistRepository extends Repository
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getTherapists():array{
         $result = [];
         $stmt= $this->database->connect()->prepare('
@@ -26,6 +33,25 @@ class TherapistRepository extends Repository
             );
         }
         return $result;
+    }
+    public function getTherapist($email):?Therapist{
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.therapist inner join "user" u on u.id = therapist.id where email= :email');
+        $stmt->bindParam(':email',$email, PDO::PARAM_STR);
+        $stmt->execute();
+        $therapist = $stmt->fetch(PDO::FETCH_ASSOC);
+        return new Therapist(
+            $therapist['name'],
+            $therapist['surname'],
+            $therapist['photo'],
+            $therapist['specialization'],
+            $therapist['account_number'],
+            $therapist['hourly_rate'],
+            $therapist['phone'],
+            $therapist['email'],
+            $therapist['password']
+        );
+
     }
     public function addTherapist(Therapist $therapist):void{
         $stmt = $this->database->connect();

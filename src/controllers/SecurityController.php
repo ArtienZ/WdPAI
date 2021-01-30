@@ -10,26 +10,43 @@ class SecurityController extends AppController
 {
     public function login()
     {
+        session_start();
         $userRepository = new UserRepository();
         if(!$this->isPost()){
             return $this->render('login');
         }
         $email = $_POST["email"];
         $password = $_POST["password"];
+
         $user = $userRepository->getUser($email);
+
         if(!$user){
             return $this->render('login', ['messages' => ['User not exist!']]);
         }
         if ($user->getEmail() !== $email) {
             return $this->render('login', ['messages' => ['Wrong email or password']]);
         }
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password,$user->getPassword())){
             return $this->render('login', ['messages' => ['Wrong email or password']]);
         }
         $url = "http://$_SERVER[HTTP_HOST]";
-        if($user instanceof Kid)return  $this->render('kidprofile',['kid'=>$user]);
-        if($user instanceof Therapist)return $this->render('myprofile',['therapist'=>$user]);
+        $_SESSION["useremail"] = $user->getEmail();
+        if($user instanceof Kid){
+            $_SESSION['kid'] = $user;
+            $_SESSION['role'] = $user->getRole();
+            return  $this->render('kidprofile');
+        }
+        if($user instanceof Therapist){
+            $_SESSION['therapist'] = $user;
+            $_SESSION['role'] = $user->getRole();
+            return $this->render('myprofile');
+        }
         //header("Location: {$url}/kid_profile"); // OR U CAN USE THIS -> return $this->render('myprofile');
 
+    }
+    public function logout(){
+        session_start();
+        session_destroy();
+        return $this->render('login');
     }
 }

@@ -11,28 +11,31 @@
     ?>
     <main>
         <header>
-            <div class="search-bar">
-                    <input placeholder="Imie i nazwisko dziecka">
-            </div>
+            <?php
+            if(isset($_SESSION['kid']))$userSession = $_SESSION['kid'];
+            elseif(isset($_SESSION['therapist']) || $_SESSION['role']=='owner')$userSession = $kid;
+            else die()?>
+            <p></p>
         </header>
         <section class="profile">
             <div class="profile-data">
                 <div class="profile-photo">
-                    <img src="public/uploads/<?= $kid->getPhoto()?>">
+                    <img src="public/uploads/<?= $userSession->getPhoto()?>">
                 </div>
                 <div class="personal-data">
+
                     <p>Dane dziecka:</p>
                     <ul>
                         <li>
                             Imie i nazwisko:<br>
                             <?=
-                            $kid->getName() ." ". $kid->getSurname();
+                            $userSession->getName() ." ". $userSession->getSurname();
                             ?>
                         </li>
                         <li>
                             Wiek: <br>
                             <?=
-                            $kid->getAge();
+                            $userSession->getAge();
                             ?>
                         </li>
                     </ul>
@@ -43,28 +46,30 @@
                         <li>
                             Imie i nazwisko:<br>
                             <?=
-                            $kid->getParentName() ." ". $kid->getParentSurname();
+                            $userSession->getParentName() ." ". $userSession->getParentSurname();
                             ?>
                         </li>
                         <li>
                             Tel.kontaktowy:<br>
                             <?=
-                            $kid->getPhone();
+                            $userSession->getPhone();
                             ?>
                         </li>
                         <li>
                             E-mail:<br>
                             <?=
-                            $kid->getEmail();
+                            $userSession->getEmail();
                             ?>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="profile-menu">
+
                 <ul>
+                    <?php if(!isset($_SESSION['therapist'])):?>
                     <li>
-                        <a href="#" class="profile-menu-buttons">DIAGNOZA</a>
+                        <a href="/uploads/<?=$userSession->getDiagnosisFiles() ?>" class="profile-menu-buttons" download>DIAGNOZA</a>
                     </li>
                     <li>
                         <a href="#" class="profile-menu-buttons">TERAPEUTA</a>
@@ -72,11 +77,20 @@
                     <li>
                         <a href="#" class="profile-menu-buttons">ZOBACZ GRAFIK</a>
                     </li>
+                    <?php endif;?>
+                    <?php
+                    if($_SESSION['role']=='owner'):?>
                     <li>
-                        <a href="#" class="profile-menu-buttons">USUŃ PACJENTA</a>
+                        <form method="POST" action="delete_user">
+                            <input type="hidden" name="userEmail" value="<?=$userSession->getEmail()?>"/>
+                            <button class="profile-menu-buttons" type="submit">USUŃ PACJENTA</button>
+                        </form>
                     </li>
+                    <?php endif;?>
                 </ul>
+
             </div>
+
 
         </section>
     </main>
